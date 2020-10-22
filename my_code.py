@@ -12,18 +12,13 @@ def tictactoe_function(tictactoe):
     print(" | | ")
     user_move = input("make a move but entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
 
-    #while True:
+    while True:
         if user_move == 'TL' or user_move == 'TM' or user_move == 'TR' or user_move == 'ML' or user_move == 'MM' or user_move == 'MR' or user_move == 'BL' or user_move == 'BM' or user_move == 'BR': 
             tictactoe[user_move] = 'x' 
             break
         else: 
             print("Please enter a valid move next time...")
-    
-
-
-
-
-
+            user_move = input("make a move but entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
 
 
 
