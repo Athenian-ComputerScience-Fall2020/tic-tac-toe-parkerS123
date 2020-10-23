@@ -16,22 +16,41 @@ tictactoe_function(tictactoe)
 def three_in_a_row(tictactoe):
     if {'TL': 'x', 'TM': 'x', 'TR': 'x'}: 
         return True
-    if {'TL': 'o', 'TM': 'o', 'TR': 'o'}:
+    elif {'TL': 'o', 'TM': 'o', 'TR': 'o'}:
         return True
-    if {'ML': 'x', 'MM': 'x', 'MR': 'x'}:
+    elif {'ML': 'x', 'MM': 'x', 'MR': 'x'}:
         return True
-    if {'ML': 'o', 'MM': 'o', 'MR': 'o'}:
+    elif {'ML': 'o', 'MM': 'o', 'MR': 'o'}:
         return True
-    if {'BL': 'x', 'BM': 'x', 'BR': 'x'}:
+    elif {'BL': 'x', 'BM': 'x', 'BR': 'x'}:
         return True
-    if {'BL': 'o', 'BM': 'o', 'BR': 'o'}:
+    elif {'BL': 'o', 'BM': 'o', 'BR': 'o'}:
         return True
-    # continue with verticle and diagonal, then return false
-    
+    elif {'TL': 'x', 'ML': 'x', 'BL': 'x'}:
+        return True
+    elif {'TL': 'o', 'ML': 'o', 'BL': 'o'}:
+        return True
+    elif {'TM': 'x', 'MM': 'x', 'BM': 'x'}:
+        return True
+    elif {'TM': 'o', 'MM': 'o', 'BM': 'o'}:
+        return True
+    elif {'TR': 'x', 'MR': 'x', 'BR': 'x'}:
+        return True
+    elif {'TR': 'o', 'MR': 'o', 'BR': 'o'}:
+        return True
+    elif {'TL': 'x', 'MM': 'x', 'BR': 'x'}:
+        return True
+    elif {'TL': 'o', 'MM': 'o', 'BR': 'o'}:
+        return True
+    elif {'TR': 'x', 'MM': 'x', 'BL': 'x'}:
+        return True
+    elif {'TR': 'o', 'MM': 'o', 'BL': 'o'}:
+        return True
+    else:
+        return False
+three_in_a_row(tictactoe)
 
-#three_in_a_row = '1'
-
-while three_in_a_row == False: 
+while three_in_a_row(tictactoe) is False: 
     print("X's goes first!")   
     x_move = input("X's make a move but entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
     o_move = 'nothing'
