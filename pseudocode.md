@@ -1,7 +1,4 @@
 # Pseudocode for this program
-(this can be in a flowchart, using bullet points, inserting a picture, etc)
-
-Below are templates for flowcharts and mardown. feel free to edit them - or delete them and do something else if you prefer.
 
 # TicTacToe
 
