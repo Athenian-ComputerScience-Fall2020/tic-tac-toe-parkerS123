@@ -5,6 +5,8 @@
 tictactoe = {'TL': '', 'TM': '', 'TR': '', 'ML': '', 'MM': '', 'MR': '', 'BL': '', 'BM': '', 'BR': '',}
 ok_moves = ['TL', 'TM', 'TR', 'ML', 'MM', 'MR', 'BL', 'BM', 'BR']
 
+print("This is a tictactoe game! Someone will be x's and someone will be o's.")
+
 def tictactoe_function(tictactoe): 
     print(tictactoe['TL'] + " |" + tictactoe['TM'] + " | " + tictactoe["TR"])
     print("-+-+-")
@@ -14,45 +16,47 @@ def tictactoe_function(tictactoe):
 tictactoe_function(tictactoe) 
 
 def three_in_a_row(tictactoe):
-    if {'TL': 'x', 'TM': 'x', 'TR': 'x'}: 
+    if tictactoe['TL'] == 'x' and tictactoe['TM'] == 'x' and tictactoe['TR'] == 'x': 
         return True
-    elif {'TL': 'o', 'TM': 'o', 'TR': 'o'}:
+    elif tictactoe['TL'] == 'o' and tictactoe['TM'] == 'o' and tictactoe['TR'] == 'o':
         return True
-    elif {'ML': 'x', 'MM': 'x', 'MR': 'x'}:
+    elif tictactoe['ML'] == 'x' and tictactoe['MM'] == 'x' and tictactoe['MR'] == 'x': 
         return True
-    elif {'ML': 'o', 'MM': 'o', 'MR': 'o'}:
+    elif tictactoe['ML'] == 'o' and tictactoe['MM'] == 'o' and tictactoe['MR'] == 'o':
         return True
-    elif {'BL': 'x', 'BM': 'x', 'BR': 'x'}:
+    elif tictactoe['BL'] == 'x' and tictactoe['BM'] == 'x' and tictactoe['BR'] == 'x':
         return True
-    elif {'BL': 'o', 'BM': 'o', 'BR': 'o'}:
+    elif tictactoe['BL'] == 'o' and tictactoe['BM'] == 'o' and tictactoe['BR'] == 'o':
         return True
-    elif {'TL': 'x', 'ML': 'x', 'BL': 'x'}:
+    elif tictactoe['TL'] == 'x' and tictactoe['ML'] == 'x' and tictactoe['BL'] == 'x':
         return True
-    elif {'TL': 'o', 'ML': 'o', 'BL': 'o'}:
+    elif tictactoe['TL'] == 'o' and tictactoe['ML'] == 'o' and tictactoe['BL'] == 'o':
         return True
-    elif {'TM': 'x', 'MM': 'x', 'BM': 'x'}:
+    elif tictactoe['TM'] == 'x' and tictactoe['MM'] == 'x' and tictactoe['BM'] == 'x':
         return True
-    elif {'TM': 'o', 'MM': 'o', 'BM': 'o'}:
+    elif tictactoe['TM'] == 'o' and tictactoe['MM'] == 'o' and tictactoe['BM'] == 'o':
         return True
-    elif {'TR': 'x', 'MR': 'x', 'BR': 'x'}:
+    elif tictactoe['TR'] == 'x' and tictactoe['MR'] == 'x' and tictactoe['BR'] == 'x':
         return True
-    elif {'TR': 'o', 'MR': 'o', 'BR': 'o'}:
+    elif tictactoe['TR'] == 'o' and tictactoe['MR'] == 'o' and tictactoe['BR'] == 'o':
         return True
-    elif {'TL': 'x', 'MM': 'x', 'BR': 'x'}:
+    elif tictactoe['TL'] == 'x' and tictactoe['MM'] == 'x' and tictactoe['BR'] == 'x':
         return True
-    elif {'TL': 'o', 'MM': 'o', 'BR': 'o'}:
+    elif tictactoe['TL'] == 'o' and tictactoe['MM'] == 'o' and tictactoe['BR'] == 'o':
         return True
-    elif {'TR': 'x', 'MM': 'x', 'BL': 'x'}:
+    elif tictactoe['TR'] == 'x' and tictactoe['MM'] == 'x' and tictactoe['BL'] == 'x':
         return True
-    elif {'TR': 'o', 'MM': 'o', 'BL': 'o'}:
+    elif tictactoe['TR'] == 'o' and tictactoe['MM'] == 'o' and tictactoe['BL'] == 'o':
         return True
     else:
         return False
-three_in_a_row(tictactoe)
+outcome = three_in_a_row(tictactoe)
+print(outcome)
+moves = 0
 
-while three_in_a_row(tictactoe) is False: 
+while outcome == False: 
     print("X's goes first!")   
-    x_move = input("X's make a move but entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
+    x_move = input("X's make a move by entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
     o_move = 'nothing'
 
     while True:
@@ -62,9 +66,10 @@ while three_in_a_row(tictactoe) is False:
             break
         else: 
             print("Please enter a valid move next time...")
-            x_move = input("make a move but entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
+            x_move = input("make a move by entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
+    tictactoe_function(tictactoe)
 
-        o_move = input("O's make a move but entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
+    o_move = input("O's make a move by entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
 
     while True:
         if o_move in ok_moves:
@@ -73,9 +78,19 @@ while three_in_a_row(tictactoe) is False:
             break
         else: 
             print("Please enter a valid move next time...")
-            o_move = input("make a move but entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
+            o_move = input("make a move by entering TL, TM, TR, ML, MM, MR, BL, BM, BR: ")
+    tictactoe_function(tictactoe)
+
+    if outcome == True:
+        print("Game Over!")
+        tictactoe_function(tictactoe)
+        break
+
+    moves = moves + 1
+    if moves == 9 and outcome == False:
+        print("It's a tie!")
+        tictactoe_function(tictactoe)
 
 
-
-print(tictactoe)
+# print(tictactoe)
 tictactoe_function(tictactoe)
